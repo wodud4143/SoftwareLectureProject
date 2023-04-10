@@ -5,7 +5,9 @@
 
 package com.mycompany.virture_stock_trading;
 
-import com.mycompany.Others.NewJFrameLogin;
+
+
+import com.mycompany.Others.SignIn;
 
 /**
  *
@@ -28,28 +30,30 @@ public class Virture_stock_trading {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrameLogin().setVisible(true);
-
+                
+                new SignIn().setVisible(true);
+                
             }
         });
     }

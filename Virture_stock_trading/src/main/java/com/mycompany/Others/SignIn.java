@@ -5,7 +5,8 @@
  */
 package com.mycompany.Others;
 
-import com.mycompany.MvcPattern.NewJFrameNewid;
+import com.mycompany.MvcPattern.SignUp;
+import com.mycompany.MvcPattern.SignUpController;
 import com.mycompany.layout.stock_search;
 import java.io.FileReader;
 import javax.swing.JLabel;
@@ -19,12 +20,12 @@ import org.json.simple.parser.JSONParser;
  *
  * @author yunch
  */
-public class NewJFrameLogin extends javax.swing.JFrame {
+public class SignIn extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrameLogin
      */
-    public NewJFrameLogin() {
+    public SignIn() {
         initComponents();
     }
 
@@ -182,7 +183,11 @@ public class NewJFrameLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_idtextActionPerformed
 
     private void newbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newbtnActionPerformed
-        new NewJFrameNewid().setVisible(true);
+          SignUp view =new SignUp();
+          SignUpController control = new SignUpController(view);
+          view.setVisible(true);
+        
+        
     }//GEN-LAST:event_newbtnActionPerformed
 
     /**
@@ -204,27 +209,28 @@ public class NewJFrameLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrameLogin.class
+            java.util.logging.Logger.getLogger(SignIn.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrameLogin().setVisible(true);
+                new SignIn().setVisible(true);
 
             }
         });

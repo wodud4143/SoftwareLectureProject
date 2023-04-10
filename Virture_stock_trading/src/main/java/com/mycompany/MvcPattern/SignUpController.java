@@ -8,7 +8,7 @@ package com.mycompany.MvcPattern;
  *
  * @author ijaeyeong
  */
-import SingletonPattern.User;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,16 +19,17 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 import com.google.gson.Gson;
+import com.mycompany.SingletonPattern.User;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class RegistrationController {
-    private NewJFrameNewid view;
+public class SignUpController {
+    private SignUp view;
     private Gson gson;
 
-    public RegistrationController(NewJFrameNewid view) {
+    public SignUpController(SignUp view) {
         this.view = view;
         this.gson = new Gson();
 
@@ -53,7 +54,7 @@ public class RegistrationController {
     }
 
     private void saveUserToFile(User user) {
-        if(NewJFrameNewid.doubleCheck > 0){
+        if(SignUp.doubleCheck > 0){
             try {
             JSONArray users;
 
