@@ -5,6 +5,11 @@
  */
 package com.mycompany.layout;
 
+import com.mycompany.Stocksearch.GoogleFinanceCrawler;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author yunch
@@ -127,7 +132,11 @@ public class stock_search extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void search_stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_stockActionPerformed
-        new stockchart().setVisible(true);
+        Stockchart stockchart = new Stockchart();
+        GoogleFinanceCrawler crawler = new GoogleFinanceCrawler(get_stock.getText());
+        stockchart.setStock_name(get_stock.getText());
+        stockchart.setVisible(true);
+        
     }//GEN-LAST:event_search_stockActionPerformed
 
     private void mypageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mypageActionPerformed

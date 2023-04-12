@@ -5,16 +5,18 @@
  */
 package com.mycompany.layout;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author yunch
  */
-public class stockchart extends javax.swing.JFrame {
+public class Stockchart extends javax.swing.JFrame {
 
     /**
      * Creates new form stockchart
      */
-    public stockchart() {
+    public Stockchart() {
         initComponents();
     }
 
@@ -28,7 +30,7 @@ public class stockchart extends javax.swing.JFrame {
     private void initComponents() {
 
         stock_name = new javax.swing.JLabel();
-        stock_price = new javax.swing.JLabel();
+        Live_Stock_Price = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         buy_stock = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -40,7 +42,7 @@ public class stockchart extends javax.swing.JFrame {
 
         stock_name.setText("stock_name");
 
-        stock_price.setText("stock_price");
+        Live_Stock_Price.setText("stock_price");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(440, 340));
@@ -78,7 +80,7 @@ public class stockchart extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(stock_price, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Live_Stock_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stock_name, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
@@ -99,7 +101,7 @@ public class stockchart extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stock_price, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Live_Stock_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRadioButton2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -141,32 +143,45 @@ public class stockchart extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stockchart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new stockchart().setVisible(true);
+                new Stockchart().setVisible(true);
             }
         });
     }
 
+    public void setStock_name(String stock_name) {
+        this.stock_name.setText(stock_name);
+    }
+
+    public void setStock_price(String stock_price) {
+        this.Live_Stock_Price.setText(stock_price);
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Live_Stock_Price;
     private javax.swing.JRadioButton buy_stock;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField quantity_stock;
     private javax.swing.JLabel stock_name;
-    private javax.swing.JLabel stock_price;
     private javax.swing.JButton to_do;
     private javax.swing.JLabel wanna_price;
     // End of variables declaration//GEN-END:variables
 }
+
+
