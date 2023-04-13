@@ -41,6 +41,7 @@ public class UserEdit {
             userData.put("id", user.getId());
             userData.put("username", user.getName());
             userData.put("password", user.getPassword());
+            userData.put("balance", user.getPassword());
             users.add(userData);
 
             // 파일에 데이터 쓰기

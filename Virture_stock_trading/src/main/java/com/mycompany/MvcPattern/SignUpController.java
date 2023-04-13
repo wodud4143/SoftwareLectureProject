@@ -50,6 +50,7 @@ public class SignUpController {
         user.setPassword(password);
         user.setName(username);
         user.setId(userId);
+        user.setId(balance);
         saveUserToFile(user);
     }
 
@@ -72,6 +73,7 @@ public class SignUpController {
             userData.put("id", user.getId());
             userData.put("username", user.getName());
             userData.put("password", user.getPassword());
+            userData.put("balance", user.getBalance());
             users.add(userData);
 
             // 파일에 데이터 쓰기
