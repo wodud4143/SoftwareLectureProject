@@ -6,7 +6,7 @@ package com.mycompany.Stocksearch;
 
 /**
  * 테스트
- *test1234
+ *
  * @author ijaeyeong
  */
 import static com.mycompany.layout.Stockchart.Live_Stock_Price;
