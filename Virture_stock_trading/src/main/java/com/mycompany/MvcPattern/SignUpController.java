@@ -50,7 +50,7 @@ public class SignUpController {
         user.setPassword(password);
         user.setName(username);
         user.setId(userId);
-        user.setId(balance);
+        user.setBalance(0);
         saveUserToFile(user);
     }
 

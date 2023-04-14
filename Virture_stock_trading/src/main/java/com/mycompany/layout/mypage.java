@@ -5,6 +5,8 @@
  */
 package com.mycompany.layout;
 
+import com.mycompany.SingletonPattern.User;
+
 /**
  *
  * @author yunch
@@ -146,6 +148,16 @@ public class mypage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        User add = User.getInstance();
+        double bal = add.getBalance();
+        //add.getBalance();
+        System.out.println(add.getBalance());
+        
+        bal += Double.valueOf(Money.getText());
+        add.setBalance(bal);
+        // json파일에 쓰기
+        
+        System.out.println(Money.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
