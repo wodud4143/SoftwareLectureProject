@@ -38,6 +38,7 @@ public class mypage extends javax.swing.JFrame {
         get_money = new javax.swing.JLabel();
         get_percent = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        Money = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -79,6 +80,8 @@ public class mypage extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("굴림", 0, 18)); // NOI18N
         jLabel7.setText("아이디:");
 
+        Money.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,14 +104,17 @@ public class mypage extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(get_percent, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(get_money, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(57, 57, 57)
-                                .addComponent(jButton1)
-                                .addGap(3, 3, 3)
-                                .addComponent(jButton2))
-                            .addComponent(get_percent, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Money)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(3, 3, 3)
+                                        .addComponent(jButton2)))))))
+                .addGap(89, 89, 89))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +137,9 @@ public class mypage extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(get_money, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66)
+                .addGap(3, 3, 3)
+                .addComponent(Money, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(get_percent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,6 +152,16 @@ public class mypage extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        User sub = User.getInstance();
+        double bal = sub.getBalance();
+        //add.getBalance();
+        System.out.println(sub.getBalance());
+        
+        bal -= Double.valueOf(Money.getText());
+        sub.setBalance(bal);
+        // json파일에 쓰기
+        
+//        System.out.println(Money.getText());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -157,7 +175,7 @@ public class mypage extends javax.swing.JFrame {
         add.setBalance(bal);
         // json파일에 쓰기
         
-        System.out.println(Money.getText());
+//        System.out.println(Money.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -196,6 +214,7 @@ public class mypage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Money;
     private javax.swing.JLabel get_id;
     private javax.swing.JLabel get_money;
     private javax.swing.JLabel get_percent;
