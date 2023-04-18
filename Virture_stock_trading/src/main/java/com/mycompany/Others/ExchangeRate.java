@@ -4,25 +4,38 @@
  */
 package com.mycompany.Others;
 
-import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+
 /**
  *
  * @author hjw12
  */
-public class ExchangeRate {
-    public static void main(String[] args) throws IOException{
-        
-        String url="https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW";
-        
-        Document doc = Jsoup.connect(url).get();
-        
-        Elements e1 = doc.getElementsByAttributeValue("class", "no_today");
-        
-        System.out.println(e1.text());
-       
-    } 
+
+
+public class ExchangeRate extends Thread{
+	
+   public static void main(String[] args){
+	   Runnable runnable=new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				Rate rate=new Rate();
+		    	String changeRate;
+				try {
+					changeRate = rate.getRate();
+					System.out.println("현재 환율="+changeRate);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		
+		ScheduledExecutorService service=Executors.newSingleThreadScheduledExecutor();
+		service.scheduleAtFixedRate(runnable,0,10,TimeUnit.SECONDS);
+  } 
 }
