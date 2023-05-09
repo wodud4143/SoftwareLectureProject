@@ -28,6 +28,7 @@ public class ExchangeRate extends Thread{
 				try {
 					changeRate = rate.getRate();
 					System.out.println("현재 환율="+changeRate);
+                                        
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

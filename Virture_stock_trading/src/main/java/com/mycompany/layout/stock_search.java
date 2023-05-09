@@ -5,6 +5,7 @@
  */
 package com.mycompany.layout;
 
+import com.mycompany.Others.Rate;
 import com.mycompany.Stocksearch.GoogleFinanceCrawler;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -15,12 +16,20 @@ import java.util.logging.Logger;
  * @author yunch
  */
 public class stock_search extends javax.swing.JFrame {
+    String rateinfo;
 
     /**
      * Creates new form stock_search
      */
     public stock_search() {
+        Rate rate = new Rate();
+        try {
+            rateinfo = rate.getRate();
+        } catch (Exception ex) {
+            Logger.getLogger(stock_search.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
+        jLabel2.setText("          1$: "+rateinfo+"원");
     }
 
     /**

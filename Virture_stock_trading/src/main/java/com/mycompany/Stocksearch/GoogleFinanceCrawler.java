@@ -33,7 +33,9 @@ public class GoogleFinanceCrawler {
             String stockCode = tickerCreator.getStockCode();
             String stockExchange = tickerCreator.getStockExchange();
             System.out.println(stockCode + ":" + stockExchange);
-
+            
+            
+            
             new Thread(() -> {
                 while (true) {
                     try {
