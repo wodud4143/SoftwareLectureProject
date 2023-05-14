@@ -48,6 +48,7 @@ public class stock_search extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         mystock = new javax.swing.JButton();
         mypage = new javax.swing.JButton();
+        but_close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -85,19 +86,29 @@ public class stock_search extends javax.swing.JFrame {
             }
         });
 
+        but_close.setLabel("종료하기");
+        but_close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_closeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mypage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(mystock, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+            .addComponent(but_close, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
+                .addComponent(but_close, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(mypage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(mystock, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -156,6 +167,11 @@ public class stock_search extends javax.swing.JFrame {
         new mystock().setVisible(true);
     }//GEN-LAST:event_mystockActionPerformed
 
+    private void but_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but_closeActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_but_closeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -192,6 +208,7 @@ public class stock_search extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton but_close;
     private javax.swing.JTextField get_stock;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
