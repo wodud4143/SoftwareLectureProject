@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.layout;
-
+//test
 import com.mycompany.Others.Rate;
 import com.mycompany.Stocksearch.GoogleFinanceCrawler;
 import java.io.IOException;
